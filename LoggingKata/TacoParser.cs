@@ -9,10 +9,31 @@
         
         public ITrackable Parse(string line)
         {
-            logger.LogInfo("Begin parsing");
+			var cells = line.Split(',');
 
-            // Do not fail if one record parsing fails, return null
-            return null; // TODO Implement
+			if(cells.Length < 3)
+			{
+				return null;
+			}
+
+			string lat = cells[0];
+			string lon = cells[1];
+			string city = cells[2];
+
+			double _lat = double.Parse(lat);
+			double _lon = double.Parse(lon);
+
+			TacoBell bell1 = new TacoBell();
+			bell1.Name = city;
+			bell1.Location = new Point { Latitude = _lat, Longitude = _lon };
+
+
+
+			return bell1;
+
+
+			
+			// TODO Implement
         }
     }
 }
