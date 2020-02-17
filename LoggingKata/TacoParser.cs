@@ -27,13 +27,7 @@
 			bell1.Name = city;
 			bell1.Location = new Point { Latitude = _lat, Longitude = _lon };
 
-
-
 			return bell1;
-
-
-			
-			// TODO Implement
         }
     }
 }
